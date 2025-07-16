@@ -1,55 +1,40 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useWallet } from "@solana/wallet-adapter-react";
-
-export default function TokenWebsite() {
-  const { publicKey } = useWallet();
-
-  const tokenAddress = "BKgx24sqPyNy3tzAuq8RFe3LCs7Y3t639g1htQ3eiUzD";
-  const totalSupply = "18,446,744,073.709551615 $HAY";
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white p-6">
-      <div className="max-w-4xl mx-auto">
-        <header className="text-center py-10">
-          <h1 className="text-5xl font-bold mb-4">$HAY Token</h1>
-          <p className="text-lg text-gray-300">
-            Official site for the $HAY token on Solana.
-          </p>
-          <div className="mt-4">
-            <WalletMultiButton className="bg-green-600 hover:bg-green-500" />
-          </div>
-        </header>
-
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-2">Token Details</h2>
-              <p><strong>Token Address:</strong></p>
-              <p className="text-xs break-all text-green-400">{tokenAddress}</p>
-              <p className="mt-2"><strong>Decimals:</strong> 9</p>
-              <p><strong>Total Supply:</strong> {totalSupply}</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-2">Stats</h2>
-              <p>Holders: <span className="text-green-400">Fetching live...</span></p>
-              <p>Transfers: <span className="text-green-400">Fetching live...</span></p>
-              <Button className="mt-4" onClick={() => window.open(`https://solscan.io/token/${tokenAddress}?cluster=devnet`)}>
-                View on Solscan
-              </Button>
-            </CardContent>
-          </Card>
-        </section>
-
-        <footer className="mt-10 text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} $HAY Token | Not financial advice
-        </footer>
-      </div>
-    </div>
-  );
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HAY Token</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #f4f4f4;
+      text-align: center;
+      padding: 2em;
+    }
+    h1 {
+      color: #00ffcc;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 1.5em;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 2em auto;
+      box-shadow: 0 0 10px rgba(0,255,204,0.3);
+    }
+    .label {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 HAY Token</h1>
+  <div class="card">
+    <p><span class="label">Token Address:</span><br><code>BKgx24sqPyNy3tzAuq8RFe3LCs7Y3t639g1htQ3eiUzD</code></p>
+    <p><span class="label">Decimals:</span> 9</p>
+    <p><span class="label">Supply:</span> 18,446,744,073.709551615</p>
+    <p><span class="label">Solana Network:</span> Devnet</p>
+  </div>
+  <p>Built with ❤️ on Solana</p>
+</body>
+</html>
